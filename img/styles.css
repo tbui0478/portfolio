@@ -1,0 +1,1264 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* CSS Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Sleek Dark Theme matching the Skills Cards */
+    --bg-main: #0d0e15;
+    --bg-surface: #18181b;
+    --bg-surface-secondary: #12131a;
+    --border-color: #27272a;
+    --border-hover: #3f3f46;
+
+    --text-primary: #f4f4f5;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+
+    --accent-blue: #60a5fa;
+    --accent-blue-hover: #3b82f6;
+    --accent-green: #4ade80;
+    --accent-purple: #c084fc;
+    --accent-orange: #fb923c;
+
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Poppins', sans-serif;
+    --code-font: 'Fira Code', 'SF Mono', Menlo, Monaco, Consolas, monospace;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Accounts for fixed header */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================
+   Header Styles (Sleek Dark Navigation)
+   ========================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 5%;
+    background-color: rgba(18, 19, 26, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h3 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+    color: var(--text-primary);
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    position: relative;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-blue);
+    transition: width 0.25s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--text-primary);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+.social-icons-header {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.social-icons-header a {
+    color: var(--text-secondary);
+}
+
+.social-icons-header a:hover {
+    color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   Section Base Styles
+   ========================================== */
+section {
+    padding: 4.5rem 0;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-main);
+}
+
+section:nth-child(even) {
+    background-color: var(--bg-surface-secondary);
+}
+
+/* ==========================================
+   Home Section with Sticky Note
+   ========================================== */
+.home-section {
+    min-height: calc(100vh - 80px);
+    background: radial-gradient(circle at 85% 20%, rgba(96, 165, 250, 0.08), transparent 40%),
+                radial-gradient(circle at 15% 70%, rgba(192, 132, 252, 0.06), transparent 45%),
+                var(--bg-main);
+}
+
+.home-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-greeting {
+    margin-bottom: 2rem;
+}
+
+.home-greeting h1,
+h1 {
+    font-family: var(--heading-font);
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+    color: var(--text-primary);
+}
+
+.intro-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 4rem;
+    margin: 0 0 2rem 0;
+}
+
+.intro-text {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Realistic Apple / Post-it Style Sticky Note in Light Blue matching theme */
+.sticky-note {
+    background-color: #bfdbfe; /* Pastel light blue matching the dark theme */
+    background: linear-gradient(145deg, #dbeafe 0%, #bfdbfe 100%);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border: 1px solid rgba(96, 165, 250, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sticky-note:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.45), 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Decorative subtle top tape effect */
+.sticky-note::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 40px;
+    width: 90px;
+    height: 22px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transform: rotate(-1.5deg);
+    border-radius: 2px;
+}
+
+.sticky-desc {
+    font-size: 1rem;
+    color: #0f172a;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+    font-weight: 400;
+}
+
+/* Box inside the sticky note */
+.sticky-contact-box {
+    background-color: #ffffff;
+    padding: 1.6rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sticky-contact-box h3 {
+    font-family: var(--heading-font);
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    color: #1c1917;
+}
+
+.sticky-contact-box p {
+    font-size: 0.95rem;
+    color: #57534e;
+    margin-bottom: 0.4rem;
+}
+
+.sticky-contact-box a {
+    color: #2563eb;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.4rem;
+}
+
+.sticky-contact-box a:hover {
+    text-decoration: underline;
+}
+
+.download-button {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #18181b;
+    color: #ffffff !important;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+    text-decoration: none !important;
+}
+
+.download-button:hover {
+    background-color: #27272a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.download-button i {
+    margin-left: 0.5rem;
+}
+
+.profile-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.profile-image-wrap {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    max-width: 420px;
+}
+
+.profile-image img {
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.circle-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 1rem;
+    transform: rotate(10deg);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+    z-index: 2;
+}
+
+/* ==========================================
+   About Section & Container Theme (with Light/Dark Toggle)
+   ========================================== */
+.about-section {
+    padding: 4.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* About Window Card (Default: Sleek Dark Mode matching Skills) */
+.about-window-card {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: var(--bg-surface);
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Thin decorative header bar with red, yellow, green circles and theme toggle */
+.about-thin-nav {
+    height: 42px;
+    background: #12131a;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    user-select: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.mac-decor-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 80px;
+}
+
+.decor-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.decor-dot.red {
+    background-color: #ff5f56;
+    border: 1px solid #e0443e;
+}
+
+.decor-dot.yellow {
+    background-color: #ffbd2e;
+    border: 1px solid #dea123;
+}
+
+.decor-dot.green {
+    background-color: #27c93f;
+    border: 1px solid #1aab29;
+}
+
+.about-nav-title {
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    text-align: center;
+    flex: 1;
+    transition: color 0.3s ease;
+}
+
+/* Light/Dark Toggle Button inside the About Nav */
+.about-theme-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid #3f3f46;
+    border-radius: 6px;
+    color: #e4e4e7;
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.about-theme-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    border-color: #52525b;
+}
+
+.about-inner-content {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.about-me {
+    max-width: 420px;
+    min-width: 280px;
+}
+
+.about-me h2 {
+    font-family: var(--heading-font);
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.about-me p {
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    transition: color 0.3s ease;
+}
+
+.skills-section {
+    flex: 1;
+    min-width: 320px;
+}
+
+.skills-section h2 {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+/* The 4 Skill Boxes Design (Dark Theme Default) */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+}
+
+.skill-box-card {
+    background-color: #12131a;
+    border: 1px solid #27272a;
+    border-radius: 10px;
+    padding: 1.35rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.3s ease;
+}
+
+.skill-box-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    border-color: #3f3f46;
+}
+
+.skill-box-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-box-header i {
+    font-size: 1.15rem;
+}
+
+.skill-box-header h3 {
+    font-family: var(--body-font);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f4f4f5;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.skill-pills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.skill-pill {
+    font-family: var(--code-font);
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 5px;
+    letter-spacing: -0.2px;
+    transition: transform 0.15s ease, background-color 0.3s ease;
+    display: inline-block;
+}
+
+.skill-pill:hover {
+    transform: scale(1.05);
+}
+
+.skill-pill.green {
+    background: rgba(74, 222, 128, 0.12);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.28);
+}
+
+.skill-pill.blue {
+    background: rgba(96, 165, 250, 0.12);
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.28);
+}
+
+.skill-pill.purple {
+    background: rgba(192, 132, 252, 0.12);
+    color: #c084fc;
+    border: 1px solid rgba(192, 132, 252, 0.28);
+}
+
+.skill-pill.orange {
+    background: rgba(251, 146, 60, 0.12);
+    color: #fb923c;
+    border: 1px solid rgba(251, 146, 60, 0.28);
+}
+
+/* ==========================================
+   About Container LIGHT MODE Toggle State
+   ========================================== */
+.about-window-card.light-mode {
+    background-color: #ffffff;
+    border-color: #e5e7eb;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+.about-window-card.light-mode .about-thin-nav {
+    background: #f8f9fa;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.about-window-card.light-mode .about-nav-title {
+    color: #4b5563;
+}
+
+.about-window-card.light-mode .about-theme-btn {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #334155;
+}
+
+.about-window-card.light-mode .about-theme-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.about-window-card.light-mode .about-me h2,
+.about-window-card.light-mode .skills-section h2 {
+    color: #1e1e1e;
+}
+
+.about-window-card.light-mode .about-me p {
+    color: #4b5563;
+}
+
+.about-window-card.light-mode .skill-box-card {
+    background-color: #f8fafc;
+    border-color: #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.about-window-card.light-mode .skill-box-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-window-card.light-mode .skill-box-header h3 {
+    color: #1e1e1e;
+}
+
+.about-window-card.light-mode .skill-pill.green {
+    background: #ecfdf5;
+    color: #047857;
+    border-color: #a7f3d0;
+}
+
+.about-window-card.light-mode .skill-pill.blue {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-color: #bfdbfe;
+}
+
+.about-window-card.light-mode .skill-pill.purple {
+    background: #faf5ff;
+    color: #7e22ce;
+    border-color: #e9d5ff;
+}
+
+.about-window-card.light-mode .skill-pill.orange {
+    background: #fff7ed;
+    color: #c2410c;
+    border-color: #fed7aa;
+}
+
+/* ==========================================
+   Projects Section (Sleek Dark Theme)
+   ========================================== */
+.projects-section {
+    background-color: var(--bg-main);
+    padding: 5rem 0;
+}
+
+.projects-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-container h2 {
+    text-align: center;
+    font-family: var(--heading-font);
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    position: relative;
+    color: var(--text-primary);
+}
+
+.projects-container h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-blue);
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-surface);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    border-color: var(--border-hover);
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #090a0f;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.04);
+}
+
+.project-content {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.project-header h3 {
+    font-family: var(--heading-font);
+    font-size: 1.4rem;
+    line-height: 1.3;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.project-term {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #93c5fd;
+    background-color: rgba(37, 99, 235, 0.2);
+    border: 1px solid rgba(147, 197, 253, 0.3);
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.tech-tag {
+    font-family: var(--code-font);
+    font-size: 0.76rem;
+    font-weight: 500;
+    background-color: rgba(96, 165, 250, 0.12);
+    color: #93c5fd;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    padding: 0.25rem 0.65rem;
+    border-radius: 5px;
+    letter-spacing: -0.2px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: inline-block;
+}
+
+.tech-tag:hover {
+    transform: translateY(-1px);
+}
+
+.tech-tag.green {
+    background-color: rgba(74, 222, 128, 0.12);
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+.tech-tag.blue {
+    background-color: rgba(96, 165, 250, 0.12);
+    color: #60a5fa;
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+.tech-tag.cyan {
+    background-color: rgba(56, 189, 248, 0.12);
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.tech-tag.purple {
+    background-color: rgba(192, 132, 252, 0.12);
+    color: #c084fc;
+    border-color: rgba(192, 132, 252, 0.3);
+}
+
+.tech-tag.orange {
+    background-color: rgba(251, 146, 60, 0.12);
+    color: #fb923c;
+    border-color: rgba(251, 146, 60, 0.3);
+}
+
+.project-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+    flex-grow: 1;
+}
+
+.project-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.15rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+.project-btn.github-btn {
+    background-color: #27272a;
+    color: #ffffff !important;
+    border: 1px solid #3f3f46;
+}
+
+.project-btn.github-btn:hover {
+    background-color: #3f3f46;
+    border-color: #52525b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-btn.demo-btn {
+    background-color: #2563eb;
+    color: #ffffff !important;
+}
+
+.project-btn.demo-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+/* ==========================================
+   Contact Section (Stylish & Compact Dark Theme)
+   ========================================== */
+.contact-section-full {
+    background-color: var(--bg-surface-secondary);
+    padding: 3.5rem 0; /* Tightened from 100px to remove excessive open space */
+}
+
+.contact-container {
+    width: 90%;
+    max-width: 1040px; /* Snugger container to reduce empty gutters */
+    margin: auto;
+}
+
+.contact-wrapper {
+    display: flex;
+    background-color: var(--bg-surface);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    border: 1px solid var(--border-color);
+}
+
+.contact-info {
+    flex: 1;
+    padding: 2.4rem;
+    background: linear-gradient(155deg, #181926 0%, #11121a 100%);
+    color: var(--text-primary);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(74, 222, 128, 0.12);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.28);
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    width: fit-content;
+    margin-bottom: 0.8rem;
+}
+
+.pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+    animation: contactPulse 2s infinite;
+}
+
+@keyframes contactPulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.contact-info h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--heading-font);
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.contact-info p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.4rem;
+}
+
+.contact-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.4rem;
+}
+
+.contact-tile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-tile:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #3f3f46;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.contact-tile.location-tile:hover {
+    transform: none;
+}
+
+.contact-tile-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(96, 165, 250, 0.12);
+    color: var(--accent-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.contact-tile-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.tile-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+}
+
+.tile-val {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.social-connect-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+}
+
+.social-chips {
+    display: flex;
+    gap: 8px;
+}
+
+.social-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.social-chip:hover {
+    background: rgba(96, 165, 250, 0.12);
+    border-color: rgba(96, 165, 250, 0.35);
+    color: var(--accent-blue);
+    transform: translateY(-1px);
+}
+
+/* Right: Compact & Stylish Contact Form */
+.contact-form {
+    flex: 1.15;
+    padding: 2.4rem;
+    background-color: var(--bg-surface);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form h2 {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+}
+
+.form-row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.72rem 0.85rem;
+    border: 1px solid var(--border-color);
+    background-color: #12131a;
+    border-radius: 6px;
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #52525b;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-blue);
+    background-color: #141520;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.16);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.6rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    width: fit-content;
+}
+
+.submit-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.5);
+}
+
+/* ==========================================
+   Footer Styles
+   ========================================== */
+footer {
+    background-color: #090a0f;
+    color: var(--text-muted);
+    padding: 2.2rem 5%;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content .social-icons {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.footer-content .social-icons a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+}
+
+.footer-content .social-icons a:hover {
+    color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   Responsive Adaptations
+   ========================================== */
+@media (max-width: 1024px) {
+    section {
+        padding: 4rem 0;
+    }
+    
+    .intro-content,
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    
+    .profile-image {
+        margin-top: 2rem;
+    }
+
+    .profile-image-wrap {
+        height: 460px;
+        margin: 0 auto;
+    }
+    
+    .circle-badge {
+        right: 10%;
+    }
+    
+    .about-inner-content {
+        flex-direction: column;
+    }
+
+    .contact-info {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0;
+    }
+    
+    h1 {
+        font-size: 2.4rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .contact-section-full {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 580px) {
+    section {
+        padding: 2rem 0;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin: 1rem 0;
+    }
+    
+    .contact-info,
+    .contact-form {
+        padding: 2rem;
+    }
+
+    .sticky-note {
+        padding: 1.5rem;
+    }
+}

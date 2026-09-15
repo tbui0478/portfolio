@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trinh Bui | Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Trinh Bui, Software Engineer and Computer Science graduate passionate about backend systems, scalable REST APIs, and full-stack cloud applications." />
+  <link rel="stylesheet" href="./img/styles.css" />
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="logo">
+      <h3>TRINH BUI</h3>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#contact">GET IN TOUCH</a></li>
+      </ul>
+    </nav>
+    <div class="social-icons-header">
+      <a href="https://linkedin.com/in/trinh-bui-0b247t/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </a>
+      <a href="https://github.com/tbui0478" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github fa-lg"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- HOME SECTION WITH STICKY NOTE -->
+  <section id="home" class="home-section">
+    <div class="home-container">
+      <div class="home-greeting">
+        <h1>Hello! I'm Trinh Bui</h1>
+      </div>
+      <div class="intro-content">
+        <div class="intro-text">
+          <!-- Sticky Note -->
+          <div class="sticky-note">
+            <p class="sticky-desc">
+              Recent Computer Science graduate passionate about building robust backend systems,
+              reliable REST APIs, and full-stack cloud applications. Experienced with Java, Spring Boot,
+              Python, and AWS, and seeking a full-time software engineering role where
+              I can contribute to meaningful projects and continue developing my technical skills.
+            </p>
+
+            <div class="sticky-contact-box">
+              <h3>Contact Me!</h3>
+              <p>I'm available at</p>
+              <a href="mailto:trinh.buii04@gmail.com">trinh.buii04@gmail.com</a>
+              <p>(404) 304 5730</p>
+              <a href="./assets/TrinhBuiResume.pdf" class="download-button" download>
+                DOWNLOAD RESUME <i class="fas fa-download"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-image">
+          <div class="profile-image-wrap">
+            <div class="circle-badge">WELCOME!</div>
+            <img src="./img/profile-pic.png" alt="Trinh Bui professional headshot" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION (Container with Light/Dark Mode Toggle) -->
+  <section id="about" class="about-section">
+    <div class="about-window-card" id="about-window-card">
+      <!-- Thin decorative navigation header with red, yellow, green circles and light/dark toggle -->
+      <div class="about-thin-nav">
+        <div class="mac-decor-dots">
+          <span class="decor-dot red"></span>
+          <span class="decor-dot yellow"></span>
+          <span class="decor-dot green"></span>
+        </div>
+        <span class="about-nav-title">About</span>
+        <button type="button" id="about-theme-toggle" class="about-theme-btn"
+          title="Toggle Light / Dark mode for About section" aria-label="Toggle Light / Dark mode">
+          <i class="fas fa-sun"></i>
+          <span class="theme-btn-label">Light</span>
+        </button>
+      </div>
+
+      <div class="about-inner-content">
+        <div class="about-me">
+          <h2>About Me</h2>
+          <p>I am a recent Computer Science graduate from Georgia State University with a strong foundation
+            in backend engineering and cloud architecture. Through building end-to-end applications,
+            I have developed hands-on experience designing reliable RESTful APIs, relational database schemas,
+            automated triage systems, and serverless cloud workflows.</p>
+          <p>I am passionate about solving complex engineering problems and writing clean, maintainable,
+            and well-tested code. With practical experience in Java, Spring Boot, Python, and AWS,
+            I am seeking a full-time Software Engineer role where I can contribute to meaningful projects,
+            collaborate with talented teams, and continue growing as an engineer.</p>
+        </div>
+
+        <!-- 4 Skill Boxes -->
+        <div class="skills-section">
+          <h2>My Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-box-card">
+              <div class="skill-box-header">
+                <i class="fas fa-code" style="color: #4ade80;"></i>
+                <h3>Languages</h3>
+              </div>
+              <div class="skill-pills-list">
+                <span class="skill-pill green">Python</span>
+                <span class="skill-pill green">Java</span>
+                <span class="skill-pill green">JavaScript</span>
+                <span class="skill-pill green">TypeScript</span>
+                <span class="skill-pill green">HTML/CSS</span>
+              </div>
+            </div>
+
+            <div class="skill-box-card">
+              <div class="skill-box-header">
+                <i class="fas fa-layer-group" style="color: #60a5fa;"></i>
+                <h3>Frameworks & Libraries</h3>
+              </div>
+              <div class="skill-pills-list">
+                <span class="skill-pill blue">React</span>
+                <span class="skill-pill blue">Spring</span>
+                <span class="skill-pill blue">Spring Boot</span>
+                <span class="skill-pill blue">FastAPI</span>
+                <span class="skill-pill blue">REST APIs</span>
+              </div>
+            </div>
+
+            <div class="skill-box-card">
+              <div class="skill-box-header">
+                <i class="fas fa-database" style="color: #c084fc;"></i>
+                <h3>Databases</h3>
+              </div>
+              <div class="skill-pills-list">
+                <span class="skill-pill purple">PostgreSQL</span>
+                <span class="skill-pill purple">MySQL</span>
+                <span class="skill-pill purple">DynamoDB</span>
+                <span class="skill-pill purple">NoSQL</span>
+              </div>
+            </div>
+
+            <div class="skill-box-card">
+              <div class="skill-box-header">
+                <i class="fas fa-cloud" style="color: #fb923c;"></i>
+                <h3>Cloud & DevOps</h3>
+              </div>
+              <div class="skill-pills-list">
+                <span class="skill-pill orange">AWS (S3, Amplify)</span>
+                <span class="skill-pill orange">Lambda</span>
+                <span class="skill-pill orange">DynamoDB</span>
+                <span class="skill-pill orange">CDK / CloudFormation</span>
+                <span class="skill-pill orange">Docker Compose</span>
+                <span class="skill-pill orange">Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION (Original Layout) -->
+  <section id="projects" class="projects-section">
+    <div class="projects-container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <!-- Project 1: IT Ticketing System -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./img/ticketing-system.png" alt="IT Ticketing System Preview" />
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>IT Ticketing System</h3>
+            </div>
+            <div class="project-tags">
+              <span class="tech-tag green">Java</span>
+              <span class="tech-tag blue">Spring Boot</span>
+              <span class="tech-tag cyan">React</span>
+              <span class="tech-tag orange">AWS (S3, Lambda, DynamoDB, CDK, Amplify)</span>
+              <span class="tech-tag purple">REST APIs</span>
+            </div>
+            <p class="project-desc">
+              Full-stack IT service management platform with a Kanban interface for managing support tickets,
+              a rule-based auto-triage engine for categorization and prioritization,
+              and serverless AWS infrastructure with SLA tracking and Slack alerts to streamline support resolution.
+            </p>
+            <div class="project-actions">
+              <a href="https://github.com/tbui0478/ticketing-system" class="project-btn github-btn" target="_blank"
+                rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://main.dkmhcis7ysb7k.amplifyapp.com/" class="project-btn demo-btn" target="_blank"
+                rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Expense Management Platform -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./img/expense-tracker.png" alt="Expense Management Platform Preview" />
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>Expense Management Platform</h3>
+            </div>
+            <div class="project-tags">
+              <span class="tech-tag green">Python</span>
+              <span class="tech-tag blue">FastAPI</span>
+              <span class="tech-tag cyan">TypeScript</span>
+              <span class="tech-tag cyan">React</span>
+              <span class="tech-tag purple">PostgreSQL</span>
+              <span class="tech-tag orange">Docker Compose</span>
+            </div>
+            <p class="project-desc">
+              Full-stack personal finance platform for tracking expenses, managing budgets,
+              and monitoring subscriptions through interactive visual analytics.
+              Built with a containerized architecture and client-side caching
+              to provide real-time cash flow insights and budget overrun alerts.
+            </p>
+            <div class="project-actions">
+              <a href="https://github.com/tbui0478/expense-tracker" class="project-btn github-btn" target="_blank"
+                rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Inventory Management System -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./img/inventory-system.png" alt="Inventory Management System Preview" />
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>Inventory Management System</h3>
+            </div>
+            <div class="project-tags">
+              <span class="tech-tag green">Java</span>
+              <span class="tech-tag blue">Spring Boot</span>
+              <span class="tech-tag purple">PostgreSQL</span>
+              <span class="tech-tag orange">Docker Compose</span>
+              <span class="tech-tag purple">REST APIs</span>
+            </div>
+            <p class="project-desc">
+              Backend inventory management system for multi-warehouse stock control,
+              supplier purchase orders, and real-time inventory valuation.
+              Features automated reorder calculations and stock alerts
+              to improve inventory accuracy and prevent stockouts.
+            </p>
+            <div class="project-actions">
+              <a href="https://github.com/tbui0478/inventory-management-system" class="project-btn github-btn"
+                target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION (Stylish & Compact) -->
+  <section id="contact" class="contact-section-full">
+    <div class="contact-container">
+      <div class="contact-wrapper">
+        <!-- Left: Contact Details & Connect -->
+        <div class="contact-info">
+          <div>
+            <h1>Get In Touch</h1>
+            <p>Interested in collaborating or exploring software engineering opportunities? Feel free to reach out
+              directly or send a message.</p>
+
+            <div class="contact-cards-grid">
+              <a href="mailto:trinh.buii04@gmail.com" class="contact-tile" title="Send Email">
+                <div class="contact-tile-icon"><i class="fas fa-envelope"></i></div>
+                <div class="contact-tile-text">
+                  <span class="tile-label">Email</span>
+                  <span class="tile-val">trinh.buii04@gmail.com</span>
+                </div>
+              </a>
+
+              <a href="tel:4043045730" class="contact-tile" title="Call Phone">
+                <div class="contact-tile-icon"><i class="fas fa-phone"></i></div>
+                <div class="contact-tile-text">
+                  <span class="tile-label">Phone</span>
+                  <span class="tile-val">(404) 304 5730</span>
+                </div>
+              </a>
+
+              <div class="contact-tile location-tile">
+                <div class="contact-tile-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="contact-tile-text">
+                  <span class="tile-label">Location</span>
+                  <span class="tile-val">Atlanta, GA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-connect-bar">
+            <span>Connect on:</span>
+            <div class="social-chips">
+              <a href="https://linkedin.com/in/trinh-bui-0b247t/" target="_blank" rel="noopener noreferrer"
+                class="social-chip">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a href="https://github.com/tbui0478" target="_blank" rel="noopener noreferrer" class="social-chip">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Compact Contact Form -->
+        <div class="contact-form">
+          <h2>Send a Message</h2>
+          <form action="https://formspree.io/f/meozbeno" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-row-two">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Role / Collaboration Subject" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4"
+                placeholder="Hi Trinh, I came across your portfolio and wanted to reach out regarding..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Trinh Bui. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/trinh-bui-0b247t/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </a>
+        <a href="https://github.com/tbui0478" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github fa-lg"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

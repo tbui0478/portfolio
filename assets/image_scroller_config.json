@@ -1,0 +1,26 @@
+{
+  "header": {
+    "pulling-duration": 100,
+    "displayImageInterval": 5,
+    "displayVideoInterval": 15,
+    "url": ""
+  },
+  "imageList": [
+    {
+      "url": "https://balinailsga.com/resources/images/shop/interior-pano-1.jpg",
+      "displayInterval": 5,
+      "disabled": "Y",
+      "expiration": "08/31/2024"
+    },
+    {
+      "url": "https://balinailsga.com/resources/images/shop/interior-pano-2.jpg",
+      "displayInterval": 15,
+      "expiration": "08/31/2025"
+    },
+    {
+      "url": "https://balinailsga.com/resources/images/shop/interior-pano-3.jpg",
+      "displayInterval": 1,
+      "expiration": "08/31/2025"
+    }
+  ]
+}

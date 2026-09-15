@@ -1,0 +1,63 @@
+runtime: php82
+env: standard
+#threadsafe: yes
+
+###########
+# dev_appserver.py is not supported with the PHP 7.2 runtime.
+# Therefore, unable to sent mail feature locally 
+# ONLY PHP5 is supported
+#
+# More info:
+# https://cloud.google.com/appengine/docs/standard/php7/config/appref
+# https://stackoverflow.com/questions/54259307/google-cloud-app-engine-app-yaml-php72-issue-with-routing
+# https://github.com/GoogleCloudPlatform/php-docs-samples/blob/master/appengine/php72/grpc/index.php#L11
+# GCLOUD PROJECT: com-balinails
+# step 1. cd to {home_dir} => /com-balinails
+# Step 2. run prod script: ./sh_scripts/prepareProd.sh
+# If not initialize GCLOUD PROJECT corrent, follow these steps:
+#     gcloud init
+# Step 3. gcloud app deploy
+########
+
+
+
+handlers:
+  
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /(.+\.(ico|gif|png|jpg|webm))$
+  static_files: \1
+  upload: .+\.(ico|gif|png|jpg|webm)$
+
+- url: /assets
+  static_dir: assets
+
+- url: /img
+  static_dir: img
+
+# using below references
+# https://cloud.google.com/appengine/docs/standard/nodejs/config/appref
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto  
+
+- url: /img
+  static_dir: img
+  
+############
+# THIS SECTION DOES NOT WORK FOR PHP32
+###########
+#- url: /.*
+#  secure: always
+#  redirect_http_response_code: 301
+#  script: auto
+
+  #entrypoint: serve index.php
+
+# DO NOT ADD THIS LINE BELOW. OTHERWISE, http:// wont redirect all traffics to httpS://
+# - url: .*
+#  script: auto
+  
